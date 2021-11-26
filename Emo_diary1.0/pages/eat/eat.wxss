@@ -1,0 +1,27 @@
+.container{
+  width: 100%;
+  height:100%;
+}
+.frame_wrap {
+  width: var(--width);
+  height: var(--height);
+  animation: frames calc(var(--duration) * 1s) steps(var(--count)) var(--playNumber);
+  background-position: 0 0;
+  background-size: calc(var(--width) * var(--count)) var(--height);
+  position: fixed;
+    bottom: 30rpx;
+    left: 20rpx;
+    display: flex;
+    z-index: 999;
+}
+
+@keyframes frames {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: calc(var(--width) * var(--count));
+  }
+}
+
+

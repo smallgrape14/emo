@@ -1,0 +1,68 @@
+<!--pages/write/write.wxml-->
+<!-- 日期选择 tab -->
+<view class="date-select bordertop" wx:if="{{yanse_column == 0}}">
+  <view class="date-box">
+    <view class="date" catchtap="UpdateDate">
+      <text class="day">{{day}} </text>/ {{_year}}-{{_month + 1}}
+    </view>
+    <image class="date-icon" src="../../icon/三角形向下.png" mode="aspectFill" ></image>
+    <view class="today" catchtap="todayDate">今天</view>
+  </view>
+</view>
+<!-- 日期选择 -->
+<view class="date-wrap {{dayShow ? 'date-wrap-active':''}}">
+  <view class="dw-top">
+    <view class="dw-year-month">{{year_month}}</view>
+    <image class="dw-arrow-left" src="../../icon/左箭头.png" mode="aspectFill"></image>
+    <image class="dw-arrow-right" src="../../icon/右箭头.png" mode="aspectFill"></image>
+    <view class="dw-btn dw-btn-left" catchtap="switchMonth" data-index="-1"></view>
+    <view class="dw-btn dw-btn-right" catchtap="switchMonth" data-index="1"></view>
+  </view>
+  <view class="dw-week">
+    <view>日</view>
+    <view>一</view>
+    <view>二</view>
+    <view>三</view>
+    <view>四</view>
+    <view>五</view>
+    <view>六</view>
+  </view>
+  <!-- 日期 dl-today -->
+  <view class="date-list">
+    <view class="dl-li">
+      <block wx:for="{{dayList}}" wx:key="{{index}}">
+        <view
+          class="dl-item {{item['class']}}"
+          data-day="{{item['day']}}"
+          data-clazz="{{item['class']}}"
+          catchtap="selectDay"
+        >
+          {{item['day']}}
+        </view>
+      </block>
+    </view>
+  </view>
+</view>
+<!-- 阴影 -->
+<view class="date-wrap-shadow" wx:if="{{dayShow}}" catchtap="close_dayShow"></view>
+
+<view class="choosemood">
+  <picker bindchange="bindPickerChange" value="{{objectIndex}}" range="{{objectArray}}" range-key="name">
+    <view class="picker">
+      当前心情选择：{{objectArray[objectIndex].name}}
+    </view>
+  </picker>
+</view>
+
+<view class="bianji">
+  <view class="wri">
+    <textarea bindinput='textinput' placeholder-class='placeholder'maxlength="-1" show-confirm-bar="false" adjust-position="true" value='{{neirong}}' style="width:100%;">
+  </textarea>
+  <text class='botsum'>您已写 {{info}} 个字</text>
+  </view>
+</view>
+<view class="bcwrap">
+  <button style="width:100%" bindtap="editsuccess" class="bc">保存</button>
+</view>
+
+

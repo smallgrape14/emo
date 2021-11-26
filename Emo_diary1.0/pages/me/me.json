@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "我的",
+  "backgroundTextStyle":"light",
+  "navigationBarBackgroundColor": "#6AD1DF",
+  "navigationBarTextStyle":"black",
+  "usingComponents": {
+    "Searchinput":"../../components/Searchinput/Searchinput",
+    "post_message":"../../components/post_message/post_message",
+    "tree_rclick":"../../components/tree_rclick/tree_rclick",
+    "dianzan":"../../components/dianzan/dianzan",
+    "comment":"../../components/comment/comment",
+    "collect":"../../components/collect/collect",
+    "more":"../../components/more/more"
+  }
+
+}

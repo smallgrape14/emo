@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "eat": "../../components/eat/eat"
+  }
+}

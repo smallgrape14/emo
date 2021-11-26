@@ -1,0 +1,101 @@
+<!--pages/me/me.wxml-->
+<image class="bg" src="https://img2020.cnblogs.com/blog/2529663/202111/2529663-20211124164418526-871266247.png"></image>
+<view class='head head-height'>
+    <block wx:if="{{!hasUserInfo && canIUse}}">
+      <view class="userinfo" bindtap="ishaveuserInfo">
+        <image class="userinfo-avatar" src="/icon/touxiang2.png" mode="cover" bindtap="ishaveuserInfo"></image>
+        <text class="userinfo-nickname" >未登录</text>
+      </view>
+      <button class="login-button head-height" bindtap="ishaveuserInfo"> 获取头像昵称 </button>
+    </block>
+    <block wx:else>
+      <view class="userinfo">
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>     
+      </view>
+    </block>
+  </view>
+
+  <!-- <button class="settinig" style="background-image:url(/icon/set.png)" plain='true' bindtap="gosetting" ></button> -->
+  <navigator url="/pages/setting/setting" class="setting" >       
+          <image class='setimage' src="/icon/set.png"></image>
+      </navigator>
+<view class="wrap">
+<view class="list-wrapper">
+  <block wx:for="{{menuitems}}" wx:key="item">
+  <navigator url="{{item.url}}" class="list-item" >       
+          <image class='item-image' src="{{item.tips}}"></image>
+          <text class="item-text" >{{item.text}}</text>
+      </navigator>
+    </block>
+</view>
+</view>
+
+<view class="wrapper">
+<view class="tree_wrap" >
+  <view class="{{scrollTop > bannerHeight ? 'nav_fixed' : ''}}">
+    <view class="nav">
+      <image class="treeimage" src="/icon/me_tree.png"></image>
+      <view class="active">我的树洞</view>
+    </view>
+  </view>
+</view>
+</view>
+
+<view class="wrapper2" wx:if="{{array.length}}">
+    <block  wx:for="{{array}}" wx:key="index">
+      <!-- <view class="post"> -->
+        <view class="post1">
+          <view bindtap="postContent" data-id="{{index}}" class="post2">
+            <!-- 用户名 & 时间 -->
+            <view class="one">
+
+              <text class="name">
+                {{name}}
+              </text>
+
+              <text class="time">
+                {{item.time}}
+              </text>
+              
+            </view>
+
+            <!-- 文章内容 -->
+            <view class="two" >
+              <text class="potxt">
+                {{item.content}}
+              </text>
+            </view>
+          </view>
+          
+          <!-- 操作列表 -->
+          <view class="option">
+            <view class="option1">
+              <dianzan bindtap="add_dianzan" data-id="{{index}} "></dianzan>
+              <text>{{item.likes}}</text>
+              <text decode="true" class="optext"> &nbsp; &nbsp;</text>
+
+              <comment bindtap="add_comment"></comment>
+              <text decode="true">&nbsp;</text>
+              <text>{{item.comments}}</text>
+              <text decode="true"> &nbsp; &nbsp; &nbsp;</text>
+
+              <collect bindtap="add_collect" data-id="{{index}} "></collect>
+              <text>{{item.collects}}</text>
+            </view>
+            <view class="option2">
+              <more></more>
+            </view>
+          </view>
+          
+        </view>  
+      <!-- </view>   -->
+      </block>
+    </view>
+<block wx:else >
+<view class="voiddiary">
+  <text class="voiddi" decode="{{true}}">&emsp;&emsp;空空如也~~\n</text>
+<text class="voiddi">掐指一算，</text>
+<text class="voiddi">宜发树洞</text>
+</view>
+</block>

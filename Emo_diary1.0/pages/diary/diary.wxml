@@ -1,0 +1,56 @@
+<image class="bg" src="../../images/backg.png"></image>
+<view class="container">
+  <view class="page-body">
+    <view>
+      <image class="weather" src="../../images/sun1.png"></image>
+    </view>
+    <div class="selector">
+
+    <picker-view  indicator-style="height: 90rpx;"
+     style="padding-left:20rpx;width: 60%; height: 100rpx;" value="{{value}}" bindchange="bindChange">
+      <picker-view-column>
+        <view class="pickcolum1" wx:for="{{months}}" wx:key="months" style="line-height: 70rpx; text-align: center;">{{item}}月</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view class="pickcolum2" wx:for="{{years}}" wx:key="years" style="line-height: 70rpx; text-align: center;">{{item}}年</view>
+      </picker-view-column>
+    </picker-view>
+
+    <text class="diasta">日记统计</text>
+    </div>
+    
+  </view>
+</view>
+
+
+<view class="listview-container margin_bottom">
+  <view wx:for="{{array}}" wx:key="index">
+    <view class="playlog-item" >
+      <view class="dotline">
+        <!-- 竖线 -->
+        <view class="line"></view>
+        <!-- 圆点 -->
+        <view class="dot">{{item.CreateTime}}</view>
+        <!-- <view class="time">{{item.CreateTime}}</view> -->
+        <!-- 时间戳 -->
+      </view>
+      <view class="content" bindtap="diaryContent">
+        <text class="ctime">{{item.CreateTime1}}</text>
+        <text class="chapter">{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<image class="round-click" src="../../images/click3.png"></image>
+
+<eat wx:if="{{flag1}}" id="eat" class="monster-eat"></eat>
+
+<!-- <popup id='popup' 
+      title='叮~开心一下!' 
+      content='哗啦啦啦啦啦啦啦啦啦啦哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或' 
+      btn_no='没有' 
+      btn_ok='查看更多>'
+      bind:error="_error"  
+      bind:success="_success">
+  </popup> -->

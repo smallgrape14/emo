@@ -1,0 +1,235 @@
+/* pages/write/write.wxss */
+.picker{
+  margin-top: 24rpx;
+  margin-left: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 38rpx;
+  color: #6CA6CD;
+}
+.wri{
+  margin: 30px;
+  /* text-align: center; */
+  border:1px solid #ddd;
+  height: 600rpx;
+}
+.botsum{
+  position: relative;
+  top: 200rpx; 
+  left:450rpx;
+  font-size: 25rpx;
+  color: rgb(140, 140, 140);
+ }
+.bcwrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width:60%;
+  height:100rpx;
+  position: fixed;
+  z-index:9;
+  left:20%;
+  bottom:25rpx;
+}
+ .bc{
+  /* height:100rpx; */
+  background-color: #87CEFA; /* Green */
+  color: white;
+  width: 50%;
+  padding-top:3rpx;
+  line-height: 100rpx;
+  border-radius: 98rpx; 
+  letter-spacing: 15rpx;
+  font-size: 45rpx;
+ }
+
+/* page {
+  background-image: url(https://img2020.cnblogs.com/blog/2529663/202111/2529663-20211112174645527-277508701.png);
+} */
+/* start 日期选择 */
+.date-select {
+  width: 100%;
+  height: 120rpx;
+  font-size: 0;
+  background: #ffffff;
+  box-sizing: border-box;
+  z-index: 20;
+}
+ 
+.date-box {
+  position: relative;
+}
+ 
+.date {
+  display: inline-block;
+  margin-top: 24rpx;
+  margin-left: 30rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 30rpx;
+  color: #000000;
+  border-right: 4rpx solid transparent;
+  background-color: #EBF5FF;
+  border-radius: 3px;
+}
+ 
+.day {
+  font-family: PingFangSC-Medium;
+  font-size: 60rpx;
+}
+ 
+.today {
+  position: absolute;
+  top: 50rpx;
+  right: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 38rpx;
+  color: #808080;
+
+}
+ 
+.date-icon {
+  display: inline-block;
+  width: 19rpx;
+  height: 16rpx;
+}
+ 
+.date-wrap {
+  position: fixed;
+  width: 100%;
+  top: -1000rpx;
+  background: #ffffff;
+  transition: top 0.3s ease;
+  z-index: 10;
+}
+ 
+.date-wrap-active {
+  top: 120rpx;
+  position: fixed;
+}
+ 
+.dw-top {
+  position: relative;
+  width: 100%;
+  height: 88rpx;
+}
+ 
+.dw-year-month {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #1D1D1D;
+}
+ 
+.dw-top > image {
+  position: absolute;
+  top: 32rpx;
+  display: block;
+  width: 22rpx;
+  height: 22rpx;
+}
+ 
+.dw-arrow-left {
+  left: 120rpx;
+}
+ 
+.dw-arrow-right {
+  right: 120rpx;
+}
+ 
+.dw-btn {
+  position: absolute;
+  top: 0;
+  width: 100rpx;
+  height: 88rpx;
+}
+ 
+.dw-btn-left {
+  left: 85rpx;
+}
+ 
+.dw-btn-right {
+  right: 85rpx;
+}
+ 
+.dw-week {
+  padding: 0 30rpx;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 24rpx;
+  color: #808080;
+  box-sizing: border-box;
+  background-color: #EBF5FF;
+  border-radius: 3px;
+}
+ 
+.dw-week > view {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 35rpx;
+  max-width: 68rpx;
+  width: 68rpx;
+  text-align: center;
+}
+ 
+.dw-week > view:last-child {
+  margin-right: 0;
+}
+ 
+.dl-li {
+  padding: 0rpx 30rpx 10rpx;
+  width: 100%;
+  font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #1D1D1D;
+  box-sizing: border-box;
+}
+ 
+.dl-item {
+  margin-top: 16rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 35rpx;
+  width: 68rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+}
+ 
+.dl-item:nth-child(7n) {
+  margin-right: 0;
+}
+ 
+.dl-today {
+  font-family: PingFangSC-Regular;
+  font-size: 15px;
+  color: #FFFFFF;
+  border-radius: 50%;
+  background: #21316A;
+}
+ 
+.dl-active {
+  color: #1D1D1D;
+}
+ 
+.dl-disable {
+  color: #808080;
+}
+ 
+.date-wrap-shadow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .5);
+  z-index: 5;
+}
+/* end 日期选择 */
